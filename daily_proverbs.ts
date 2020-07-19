@@ -50,8 +50,13 @@ function myFunction() {
     const shrug = "¯\_(ツ)_/¯";
     let proverbText = proverbs[dayOfTheMonth].replace( /\d{2}:(\d{3}):\d{3}\s/g,"" );
 
-    // https://stackoverflow.com/a/60855343
-    // JSON.parse(jsonString)
+    let paramBible = "LEB";
+    let paramOutputFormat = "txt";
+    let paramBibleReference = "John3.16";
+    let paramApiKey = fetch('/api.key');
+    const ApiBibliaCom = `https://api.biblia.com/v1/bible/content/${paramBible}.${paramOutputFormat}?passage=${paramBibleReference}&key=${paramApiKey}`;
+
+    // #TODO https://stackoverflow.com/questions/38688822/how-to-parse-json-string-in-typescript#
 
     if( (dailyTextDate   !== null) &&
         (dailyTextHeader !== null) &&

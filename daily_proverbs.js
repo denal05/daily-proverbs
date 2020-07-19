@@ -49,8 +49,12 @@ function myFunction() {
         var mk_MK = "[ Македонски: " + aHrefBibleCom + " ]";
         var shrug = "¯\_(ツ)_/¯";
         var proverbText = proverbs[dayOfTheMonth].replace(/\d{2}:(\d{3}):\d{3}\s/g, "");
-        // https://stackoverflow.com/a/60855343
-        // JSON.parse(jsonString)
+        var paramBible = "LEB";
+        var paramOutputFormat = "txt";
+        var paramBibleReference = "John3.16";
+        var paramApiKey = fetch('/api.key');
+        var ApiBibliaCom = "https://api.biblia.com/v1/bible/content/" + paramBible + "." + paramOutputFormat + "?passage=" + paramBibleReference + "&key=" + paramApiKey;
+        // #TODO https://stackoverflow.com/questions/38688822/how-to-parse-json-string-in-typescript#
         if ((dailyTextDate !== null) &&
             (dailyTextHeader !== null) &&
             (dailyTextBody !== null) &&
