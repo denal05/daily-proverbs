@@ -7,12 +7,13 @@ Originally written around 2013 in plain vanilla JavaScript (< ECMAScript 2015), 
   b. https://scripture.api.bible
   c. https://bible-api.com
 2. Make offline mode that defaults to the local Book of Proverbs.
-3. Use RequireJS.
-4. Turn this into a Magento jQuery widget.
-5. Package this with Composer to make it a Magento extension.
-6. Provide a drop-down box to select a language.
-7. Provide a drop-down box to select a Bible version.
-8. Do the same with the Book of Ecclesiastes.
+3. Turn .ts files into modules per https://www.typescriptlang.org/docs/handbook/modules.html
+4. Use RequireJS.
+5. Turn this into a Magento jQuery widget.
+6. Package this with Composer to make it a Magento extension.
+7. Provide a drop-down box to select a language.
+8. Provide a drop-down box to select a Bible version.
+9. Do the same with the Book of Ecclesiastes.
 
 #DONE
 1. Rewrote JavaScript in TypeScript code.

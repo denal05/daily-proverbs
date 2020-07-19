@@ -13,23 +13,20 @@
         <!--script src="daily_proverbs.js"></script-->
         <script>
             // https://learn.jquery.com/ajax/jquery-ajax-methods/
-            /*
-            let paramBible = "NIV";
-            let paramOutputFormat = "txt";
-            let paramBibleReference = "John3.17";
-            let paramApiKey = fetch('./api.key');
-            url: `https://api.biblia.com/v1/bible/content/${paramBible}.${paramOutputFormat}?passage=${paramBibleReference}&key=${paramApiKey}`,
-            url: "https://api.biblia.com/v1/bible/content/NIV.html.json?passage=John3.17&key=",
-            */
+            const today = new Date();
+            const dayOfTheMonth = today.getDate();
+            const paramBible = "ASV";
+            const paramOutputFormat = "html.json";
+            const paramPassage = "Proverbs" + dayOfTheMonth;
+            const apiBibliaCom = `https://api.biblia.com/v1/bible/content/${paramBible}.${paramOutputFormat}`;
             $.ajax({
-                /*
+                url: apiBibliaCom,
                 data: {
-                    id: 123
+                    passage: paramPassage,
+                    key: ""
                 },
-                */
-                url: "https://api.biblia.com/v1/bible/content/LEB.html.json?passage=John3.16&key=",
-                //crossDomain: true,
-                //jsonp: false,
+                crossDomain: true,
+                jsonp: false,
                 type: "GET",
                 dataType : "json",
                 contentType: 'application/json',
@@ -38,7 +35,7 @@
             // Code to run if the request succeeds (is done);
             // The response is passed to the function
             .done(function( json ) {
-                $( "<h1>" ).text( json.title ).appendTo( "body" );
+                $( "<h1>" ).text( "Proverbs " + dayOfTheMonth ).appendTo( "body" );
                 $( "<div class=\"content\">").html( json.text ).appendTo( "body" );
             })
 
